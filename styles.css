@@ -1,0 +1,239 @@
+:root {
+    /* --- Colors --- */
+    --black: var(--gray-14);
+    --gray-14: #2c2c2c;
+    --gray-7: #595959;
+    --gray-3: #888888;
+    --gray-2: #dddddd;
+    --gray-1: #eeeeee;
+    --white: #ffffff;
+    --blue-7: #213782;
+    --blue-5: #2572e4;
+    --blue-3: #4791ff;
+    --blue-1: #e3f4fe;
+    --brown-7: #533302;
+    --brown-5: #8b5c16;
+    --brown-3: #c18b38;
+    --brown-1: #dcb67d;
+    --yellow-1: #ffd600;
+    --red-5: #d60033;
+    --red-3: #ff4a4a;
+    --red-1: #ffdad3;
+    --green-5: #48840b;
+    --green-3: #6ba40d;
+    --green-1: #edf2cb;
+    --foreground: light-dark(var(--black), var(--white));
+    --background: light-dark(var(--white), var(--black));
+    color-scheme: light dark;
+
+    /* --- Font scale --- */
+    /* @link https://utopia.fyi/type/calculator?c=300,20,1.2,1200,26,1.25,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+    /* Step -2: 13.8889px → 16.64px */
+    --step--2: clamp(0.8681rem, 0.8107rem + 0.3057vw, 1.04rem);
+    /* Step -1: 16.6667px → 20.8px */
+    --step--1: clamp(1.0417rem, 0.9556rem + 0.4593vw, 1.3rem);
+    /* Step 0: 20px → 26px */
+    --step-0: clamp(1.25rem, 1.125rem + 0.6667vw, 1.625rem);
+    /* Step 1: 24px → 32.5px */
+    --step-1: clamp(1.5rem, 1.3229rem + 0.9444vw, 2.0313rem);
+    /* Step 2: 28.8px → 40.625px */
+    --step-2: clamp(1.8rem, 1.5536rem + 1.3139vw, 2.5391rem);
+    /* Step 3: 34.56px → 50.7813px */
+    --step-3: clamp(2.16rem, 1.8221rem + 1.8024vw, 3.1738rem);
+    /* Step 4: 41.472px → 63.4766px */
+    --step-4: clamp(2.592rem, 2.1336rem + 2.445vw, 3.9673rem);
+    /* Step 5: 49.7664px → 79.3457px */
+    --step-5: clamp(3.1104rem, 2.4942rem + 3.2866vw, 4.9591rem);
+    /* Step 6: 59.7197px → 99.1821px */
+    --step-6: clamp(3.7325rem, 2.9103rem + 4.3847vw, 6.1989rem);
+    /* Step 7: 71.6636px → 123.9777px */
+    --step-7: clamp(4.479rem, 3.3891rem + 5.8127vw, 7.7486rem);
+
+    /* --- Spacing --- */
+    /* @link https://utopia.fyi/space/calculator?c=300,20,1.2,1200,26,1.25,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,&g=s,l,xl,12 */
+    /* Space 3xs: 5px → 7px */
+    --space-3xs: clamp(0.3125rem, 0.2708rem + 0.2222vw, 0.4375rem);
+    /* Space 2xs: 10px → 13px */
+    --space-2xs: clamp(0.625rem, 0.5625rem + 0.3333vw, 0.8125rem);
+    /* Space xs: 15px → 20px */
+    --space-xs: clamp(0.9375rem, 0.8333rem + 0.5556vw, 1.25rem);
+    /* Space s: 20px → 26px */
+    --space-s: clamp(1.25rem, 1.125rem + 0.6667vw, 1.625rem);
+    /* Space m: 30px → 39px */
+    --space-m: clamp(1.875rem, 1.6875rem + 1vw, 2.4375rem);
+    /* Space l: 40px → 52px */
+    --space-l: clamp(2.5rem, 2.25rem + 1.3333vw, 3.25rem);
+    /* Space xl: 60px → 78px */
+    --space-xl: clamp(3.75rem, 3.375rem + 2vw, 4.875rem);
+    /* Space 2xl: 80px → 104px */
+    --space-2xl: clamp(5rem, 4.5rem + 2.6667vw, 6.5rem);
+    /* Space 3xl: 120px → 156px */
+    --space-3xl: clamp(7.5rem, 6.75rem + 4vw, 9.75rem);
+    /* One-up pairs */
+    /* Space 3xs-2xs: 5px → 13px */
+    --space-3xs-2xs: clamp(0.3125rem, 0.1458rem + 0.8889vw, 0.8125rem);
+    /* Space 2xs-xs: 10px → 20px */
+    --space-2xs-xs: clamp(0.625rem, 0.4167rem + 1.1111vw, 1.25rem);
+    /* Space xs-s: 15px → 26px */
+    --space-xs-s: clamp(0.9375rem, 0.7083rem + 1.2222vw, 1.625rem);
+    /* Space s-m: 20px → 39px */
+    --space-s-m: clamp(1.25rem, 0.8542rem + 2.1111vw, 2.4375rem);
+    /* Space m-l: 30px → 52px */
+    --space-m-l: clamp(1.875rem, 1.4167rem + 2.4444vw, 3.25rem);
+    /* Space l-xl: 40px → 78px */
+    --space-l-xl: clamp(2.5rem, 1.7083rem + 4.2222vw, 4.875rem);
+    /* Space xl-2xl: 60px → 104px */
+    --space-xl-2xl: clamp(3.75rem, 2.8333rem + 4.8889vw, 6.5rem);
+    /* Space 2xl-3xl: 80px → 156px */
+    --space-2xl-3xl: clamp(5rem, 3.4167rem + 8.4444vw, 9.75rem);
+}
+
+/* ---  Modern CSS Reset - Andy Bell --- */
+/* @linkhttps://gist.github.com/Asjas/4b0736108d56197fce0ec9068145b421 */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+/* --- /reset --- */
+
+/* --- Elements --- */
+body {
+    --flow-space: var(--space-l);
+
+    background-color: var(--background);
+    color: var(--foreground);
+    font-size: var(--step-0);
+    line-height: 1.4;
+    font-family:
+        ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
+
+h2 {
+    font-size: var(--step-4);
+    line-height: 1.15;
+}
+
+header {
+    --logo-size: 150px;
+
+    display: flex;
+    justify-content: center;
+    background: var(--gray-1);
+    border-top: 0.5rem solid var(--brown-3);
+
+    img {
+        width: var(--logo-size);
+    }
+}
+
+footer {
+    --logo-size: 60px;
+
+    padding-block: var(--space-s);
+    background-color: var(--brown-3);
+    display: flex;
+    justify-content: center;
+
+    img {
+        width: var(--logo-size);
+    }
+}
+
+/* --- Classes --- */
+.grid {
+    display: grid;
+    grid-template-columns:
+        [full-start] minmax(var(--space-s), 1fr)
+        [content-start] minmax(0, 60rem) [content-end]
+        minmax(var(--space-s), 1fr) [full-end];
+
+    > * {
+        grid-column: content;
+    }
+}
+
+.flow {
+    > * + * {
+        margin-block-start: var(--flow-space, 1em);
+    }
+}
+
+.skip-link {
+    position: absolute;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    text-align: center;
+    transition: 0s;
+    text-decoration: none;
+    padding-block: var(--space-2xs);
+
+    &:hover,
+    &:focus-visible {
+        background-color: var(--foreground);
+        color: var(--background);
+    }
+}
+
+.visually-hidden:not(:focus):not(:active):not(:focus-within) {
+    clip-path: inset(50%);
+    block-size: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    inline-size: 1px;
+}
