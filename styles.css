@@ -156,20 +156,48 @@ body {
 
     background-color: var(--background);
     color: var(--foreground);
-    font-size: var(--step-0);
+    font-size: var(--step--1); /* To do: Maybe update steps now that Google font is being used? */
     line-height: 1.4;
-    font-family:
-        ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-        "Noto Color Emoji";
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 h2 {
-    font-size: var(--step-4);
+    font-size: var(--step-3);
+    font-weight: 800;
     line-height: 1.15;
 }
 
+h3 {
+    font-size: var(--step-2);
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+h4 {
+    font-size: var(--step-1);
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+/* 🃏 Hackingly added .flow to increase specificity */
+.flow h4 + ul {
+    margin-block-start: var(--space-s);
+}
+
+strong {
+    font-weight: 800;
+}
+
+blockquote {
+    font-style: italic;
+    margin-inline-start: var(--space-l);
+}
+
 header {
-    --logo-size: 150px;
+    --logo-size: 200px;
 
     display: flex;
     justify-content: center;
@@ -182,19 +210,28 @@ header {
 }
 
 footer {
-    --logo-size: 60px;
-
     padding-block: var(--space-s);
     background-color: var(--brown-3);
     display: flex;
     justify-content: center;
-
-    img {
-        width: var(--logo-size);
-    }
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-l);
 }
 
 /* --- Classes --- */
+.fist-logo {
+    --logo-size: 60px;
+
+    width: var(--logo-size);
+}
+
+.cwa-logo {
+    --logo-size: 231px;
+
+    width: var(--logo-size);
+}
+
 .grid {
     display: grid;
     grid-template-columns:
@@ -215,12 +252,11 @@ footer {
 
 .skip-link {
     position: absolute;
-    inset-inline-start: 0;
-    inset-inline-end: 0;
+    inset-inline: var(--space-m);
     text-align: center;
     transition: 0s;
-    text-decoration: none;
     padding-block: var(--space-2xs);
+    inset-block-start: var(--space-m);
 
     &:hover,
     &:focus-visible {
@@ -236,4 +272,9 @@ footer {
     position: absolute;
     white-space: nowrap;
     inline-size: 1px;
+}
+
+:focus-visible {
+    outline: 9px double var(--black);
+    box-shadow: 0 0 0 6px var(--white);
 }
