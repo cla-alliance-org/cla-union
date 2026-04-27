@@ -220,8 +220,8 @@ footer {
 }
 
 /* --- Classes --- */
-.fist-logo {
-    --logo-size: 60px;
+.cla-logo {
+    --logo-size: 125px;
 
     width: var(--logo-size);
 }
